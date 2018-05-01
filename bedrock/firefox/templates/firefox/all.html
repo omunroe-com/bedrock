@@ -72,12 +72,12 @@
 {% endblock %}
 
 {% block page_css %}
-  {% stylesheet 'firefox_all' %}
+  <link href="{{ static('css/BUNDLES/firefox_all.css') }}" rel="stylesheet" type="text/css" />
 {% endblock %}
 
 {% block extrahead %}
 <!--[if lte IE 8]>
-  {% stylesheet 'firefox_all_old_ie' %}
+  <link href="{{ static('css/BUNDLES/firefox_all_old_ie.css') }}" rel="stylesheet" type="text/css" />
 <![endif]-->
 {% endblock %}
 
@@ -185,6 +185,6 @@
 {% block js %}
   {# searching with js only makes sense if we're displaying all #}
   {% if platform == 'desktop' and not query %}
-    {% javascript 'firefox_all' %}
+    <script type="text/javascript" src="{{ static('js/BUNDLES/firefox_all.js') }}" charset="utf-8"></script>
   {% endif %}
 {% endblock %}
